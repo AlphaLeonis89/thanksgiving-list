@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thanksgiving Recipes – Step by Step</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      background-color: #faf5f0;
+      color: #333;
+      line-height: 1.5;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 6px 0;
+      font-size: 22px;
+    }
+    a.back-link {
+      font-size: 13px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid #c58b3b;
+      background: #f8d9a5;
+      text-decoration: none;
+      color: #663300;
+    }
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 6px;
+      border-bottom: 2px solid #e0c79f;
+      padding-bottom: 4px;
+      font-size: 18px;
+    }
+    h3 {
+      margin-top: 14px;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+    .toc {
+      background: #fff7e6;
+      border-radius: 6px;
+      border: 1px solid #f0d29a;
+      padding: 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .toc a {
+      color: #663300;
+      text-decoration: none;
+    }
+    .toc ul {
+      margin: 6px 0;
+      padding-left: 18px;
+    }
+    .recipe {
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #ead1a5;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .ingredients-list, .steps-list {
+      margin: 4px 0 6px 0;
+      padding-left: 18px;
+      font-size: 14px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: #f3e1c7;
+      margin-left: 4px;
+      color: #5c3a00;
+    }
+    .note {
+      font-size: 12px;
+      color: #555;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Thanksgiving Recipes – Step by Step</h1>
+  <a class="back-link" href="index.html">← Back to Checklist</a>
+</header>
+
+<div class="toc">
+  <strong>Quick navigation</strong>
+  <ul>
+    <li><a href="#main-dinner">Main Thanksgiving Dinner</a></li>
+    <li><a href="#pumpkin-pie">Pumpkin Pie</a></li>
+    <li><a href="#pecan-chocolate-pie">Pecan Chocolate Pie</a></li>
+  </ul>
+  <div class="note">
+    Pantry staples assumed: salt, pepper, oil/butter, basic spices, flour, sugar.
+  </div>
+</div>
+
+<!-- MAIN THANKSGIVING DINNER -->
+<h2 id="main-dinner">Main Thanksgiving Dinner</h2>
+
+<div class="recipe" id="roast-turkey">
+  <h3>Roast Turkey with Herbs<span class="tag">Uses: turkey, herbs, onions, butter, citrus</span></h3>
+  <p><strong>From your list:</strong> Ferndale frozen turkey, organic mixed herbs, red onions, lemons, navel orange, butter (on hand), broth.</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>1 whole turkey (about 12–13 lb), thawed</li>
+    <li>4–6 tbsp butter, softened</li>
+    <li>1–2 red onions, quartered</li>
+    <li>1 lemon, halved</li>
+    <li>1 navel orange, halved</li>
+    <li>Handful of mixed herbs (thyme, rosemary, sage, etc.)</li>
+    <li>1–2 cups chicken broth (Field Day broth)</li>
+    <li>Salt and black pepper</li>
+    <li>Optional: garlic, paprika, olive oil</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li><strong>Thaw the turkey</strong>: If frozen, thaw in the fridge (about 24 hours per 4–5 lb). Make sure it’s fully thawed before cooking.</li>
+    <li><strong>Preheat</strong> oven to 325°F (163°C).</li>
+    <li><strong>Prepare the turkey</strong>:
+      <ul>
+        <li>Remove neck and giblets from cavity (save for stock if you like).</li>
+        <li>Pat turkey dry with paper towels inside and out.</li>
+      </ul>
+    </li>
+    <li><strong>Season cavity</strong>:
+      <ul>
+        <li>Sprinkle salt and pepper inside.</li>
+        <li>Stuff with lemon halves, orange halves, onion quarters, and a handful of herbs.</li>
+      </ul>
+    </li>
+    <li><strong>Butter and herbs on the outside</strong>:
+      <ul>
+        <li>Loosen skin over breast gently with your fingers.</li>
+        <li>Rub softened butter under the skin over the breast meat.</li>
+        <li>Rub remaining butter over the outside of the turkey.</li>
+        <li>Season generously with salt, pepper, and chopped herbs.</li>
+      </ul>
+    </li>
+    <li><strong>Set up roasting pan</strong>:
+      <ul>
+        <li>Place turkey breast-side up on a rack in a roasting pan.</li>
+        <li>Pour 1–2 cups broth into the bottom of the pan.</li>
+      </ul>
+    </li>
+    <li><strong>Roast</strong>:
+      <ul>
+        <li>Roast at 325°F, basting with pan juices every 45–60 minutes.</li>
+        <li>Approx time: 13–15 minutes per lb, so around 2.5–3.5 hours for your bird.</li>
+      </ul>
+    </li>
+    <li><strong>Check doneness</strong>:
+      <ul>
+        <li>Insert a meat thermometer into the thickest part of the thigh (not touching bone).</li>
+        <li>Done at 165°F (74°C). If skin darkens too fast, tent loosely with foil.</li>
+      </ul>
+    </li>
+    <li><strong>Rest</strong>:
+      <ul>
+        <li>Remove from oven and let rest at least 20–30 minutes before carving.</li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
+<div class="recipe" id="mashed-potatoes">
+  <h3>Creamy Mashed Potatoes<span class="tag">Uses: russet potatoes, milk, butter</span></h3>
+  <p><strong>From your list:</strong> russet potatoes, Rosenberger whole milk, butter.</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>About 3 lb russet potatoes (from your 4.28 lb total)</li>
+    <li>4 tbsp butter (or more to taste)</li>
+    <li>1/2–1 cup milk, warmed</li>
+    <li>Salt and pepper</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Peel potatoes (optional for more rustic) and cut into chunks.</li>
+    <li>Place in a pot, cover with cold salted water, and bring to a boil.</li>
+    <li>Reduce to a gentle boil and cook 15–20 minutes until very tender.</li>
+    <li>Drain well and return potatoes to the warm pot.</li>
+    <li>Add butter and a splash of warm milk. Mash until smooth.</li>
+    <li>Add more milk as needed to reach desired creaminess.</li>
+    <li>Season generously with salt and pepper. Keep warm until serving.</li>
+  </ol>
+</div>
+
+<div class="recipe" id="sweet-potatoes">
+  <h3>Roasted Sweet Potatoes<span class="tag">Uses: organic sweet potatoes/yams</span></h3>
+  <p><strong>From your list:</strong> organic sweet potatoes/yams.</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>1.5–2 lb sweet potatoes</li>
+    <li>2–3 tbsp oil or melted butter</li>
+    <li>Salt and pepper</li>
+    <li>Optional: cinnamon, smoked paprika, maple syrup</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Preheat oven to 400°F (204°C).</li>
+    <li>Peel sweet potatoes and cut into 1-inch cubes.</li>
+    <li>Toss with oil, salt, pepper, and any spices you like.</li>
+    <li>Spread on a parchment-lined baking sheet in a single layer.</li>
+    <li>Roast 25–35 minutes, tossing halfway, until browned and tender.</li>
+    <li>Optional: drizzle with a little maple syrup before serving.</li>
+  </ol>
+</div>
+
+<div class="recipe" id="green-bean-casserole">
+  <h3>Green Bean Casserole<span class="tag">Uses: green beans, creamy soup, crispy onions</span></h3>
+  <p><strong>From your list:</strong> local green beans, Pacific cream of mushroom soup, Food Club crispy onions, milk, optional corn/peas.</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>1–1.5 lb fresh green beans, trimmed and cut in half</li>
+    <li>1 can Pacific organic cream of mushroom soup</li>
+    <li>1/3–1/2 cup milk</li>
+    <li>1 cup crispy onions (plus extra for topping)</li>
+    <li>Salt and pepper</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Preheat oven to 350°F (177°C).</li>
+    <li>Bring a pot of salted water to a boil and blanch green beans 4–5 minutes. Drain and rinse briefly with cold water.</li>
+    <li>In a bowl, mix mushroom soup, milk, and a pinch of salt and pepper.</li>
+    <li>Stir in blanched green beans and about half of the crispy onions.</li>
+    <li>Pour mixture into a baking dish.</li>
+    <li>Bake 20–25 minutes until bubbling.</li>
+    <li>Top with remaining crispy onions and bake 5–10 more minutes until golden.</li>
+  </ol>
+</div>
+
+<div class="recipe" id="cranberry-sauce">
+  <h3>Fresh Cranberry Sauce<span class="tag">Uses: cranberries, sugar, orange</span></h3>
+  <p><strong>From your list:</strong> fresh cranberries, navel orange, sugar (pantry).</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>1 bag (12 oz) fresh cranberries</li>
+    <li>1 cup sugar (adjust to taste)</li>
+    <li>3/4 cup water or apple juice</li>
+    <li>Zest and juice of 1 orange (from your navel orange)</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Rinse cranberries and pick out any soft or shriveled ones.</li>
+    <li>In a saucepan, combine water/juice, sugar, orange zest, and orange juice.</li>
+    <li>Bring to a simmer, stirring to dissolve sugar.</li>
+    <li>Add cranberries and cook over medium heat 10–15 minutes, stirring occasionally, until most berries have popped and mixture thickens.</li>
+    <li>Taste and adjust sweetness (add more sugar if needed).</li>
+    <li>Cool to room temperature; sauce will thicken more as it cools. Chill until serving.</li>
+  </ol>
+  <p class="note">You also bought canned cranberry sauce – serve that alongside this fresh version for variety.</p>
+</div>
+
+<div class="recipe" id="stuffing">
+  <h3>Simple Herb Stuffing<span class="tag">Uses: stuffing mix, onions, herbs, broth</span></h3>
+  <p><strong>From your list:</strong> Arnold stuffing mix, red onions, mixed herbs, Field Day broth, butter.</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>2 boxes herb stuffing mix</li>
+    <li>1–2 red onions, diced</li>
+    <li>2–3 tbsp butter or oil</li>
+    <li>2–3 cups chicken broth (warm)</li>
+    <li>Chopped mixed herbs</li>
+    <li>Salt and pepper (if needed – stuffing mix is often already salty)</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Preheat oven to 350°F (177°C).</li>
+    <li>In a pan, sauté diced onions in butter/oil until softened and lightly golden.</li>
+    <li>In a large bowl, add stuffing mix, sautéed onions, and herbs.</li>
+    <li>Pour in warm broth gradually, tossing with a spoon, until cubes are moistened but not soggy.</li>
+    <li>Transfer to a greased baking dish and cover with foil.</li>
+    <li>Bake 25–30 minutes, then uncover and bake an additional 10–15 minutes for a crisp top.</li>
+  </ol>
+</div>
+
+<div class="recipe" id="cornbread">
+  <h3>Gluten-Free Cornbread<span class="tag">Uses: Bob’s GF cornbread mix</span></h3>
+  <p><strong>From your list:</strong> Bob’s Red Mill gluten-free cornbread mix, eggs, milk, butter.</p>
+
+  <p><strong>Steps (follow the box + this simplification)</strong></p>
+  <ol class="steps-list">
+    <li>Preheat oven to the temperature indicated on the cornbread mix (usually around 375–400°F).</li>
+    <li>In a bowl, combine the cornbread mix, eggs, milk, and melted butter according to the box instructions.</li>
+    <li>Stir just until combined (some small lumps are OK).</li>
+    <li>Pour batter into a greased baking pan.</li>
+    <li>Bake until golden and a toothpick inserted in the center comes out clean (usually 20–25 minutes).</li>
+    <li>Cool slightly, slice, and serve warm.</li>
+  </ol>
+</div>
+
+<div class="recipe" id="carrots">
+  <h3>Glazed Baby Carrots<span class="tag">Uses: rainbow baby carrots</span></h3>
+  <p><strong>From your list:</strong> organic rainbow baby carrots.</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>1 bag baby carrots</li>
+    <li>2 tbsp butter</li>
+    <li>2 tbsp brown sugar or honey</li>
+    <li>Salt and pepper</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Place carrots in a pan, cover with water, and simmer 6–8 minutes until just tender. Drain.</li>
+    <li>Return pan to medium heat, add butter and brown sugar/honey.</li>
+    <li>Toss carrots in the glaze until coated and slightly glossy.</li>
+    <li>Season with a pinch of salt and pepper. Serve warm.</li>
+  </ol>
+</div>
+
+<div class="recipe" id="cider">
+  <h3>Warm Apple “Cider” Drink<span class="tag">Uses: apple juice</span></h3>
+  <p><strong>From your list:</strong> Field Day organic apple juice.</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>Apple juice</li>
+    <li>Optional: cinnamon sticks, cloves, orange slices</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Pour apple juice into a pot.</li>
+    <li>Add a cinnamon stick, a few cloves, and optional orange slices.</li>
+    <li>Warm gently over low heat until steaming (do not boil).</li>
+    <li>Remove whole spices before serving. Serve warm in mugs.</li>
+  </ol>
+</div>
+
+<!-- PUMPKIN PIE -->
+<h2 id="pumpkin-pie">Pumpkin Pie</h2>
+
+<div class="recipe">
+  <h3>Pumpkin Pie (using Farmers organic pumpkin)<span class="tag">Uses: pumpkin can, pie crust, eggs, cream/milk, sugar & spices</span></h3>
+  <p><strong>From your list:</strong> Farmers organic pumpkin pie can, Midel GF pie crust, eggs, Rosenberger milk or heavy cream, sugar and spices from pantry, whipped cream.</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>1 pie crust (Midel GF graham or similar)</li>
+    <li>1 can (about 15 oz) Farmers organic pumpkin</li>
+    <li>2–3 large eggs</li>
+    <li>1 cup milk or a mix of milk + cream</li>
+    <li>1/2–3/4 cup sugar (mix of white and brown if you like)</li>
+    <li>1–1.5 tsp ground cinnamon</li>
+    <li>1/2 tsp ground ginger</li>
+    <li>1/4 tsp nutmeg</li>
+    <li>Pinch of salt</li>
+    <li>Whipped cream for serving</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Preheat oven to 425°F (218°C).</li>
+    <li>Place pie crust in a pie dish if it’s not already in one. Crimp edges if needed.</li>
+    <li>In a large bowl, whisk pumpkin, sugar, spices, and salt until smooth.</li>
+    <li>Whisk in eggs one at a time.</li>
+    <li>Add milk/cream and whisk until fully combined (mixture will be pourable).</li>
+    <li>Pour filling into the pie crust.</li>
+    <li>Bake at 425°F for 15 minutes.</li>
+    <li>Reduce oven to 350°F (177°C), and continue baking 35–45 minutes, until the center is mostly set (a slight jiggle in the middle is okay).</li>
+    <li>Cool completely at room temperature, then chill if you prefer firmer slices.</li>
+    <li>Serve with whipped cream.</li>
+  </ol>
+</div>
+
+<!-- PECAN CHOCOLATE PIE -->
+<h2 id="pecan-chocolate-pie">Pecan Chocolate Pie</h2>
+
+<div class="recipe">
+  <h3>Pecan Chocolate Pie<span class="tag">Uses: pecan halves, pie shell, chocolate chips, eggs, sugar/syrup</span></h3>
+  <p><strong>From your list:</strong> pecan halves, Wholly 9&quot; pie shell, Field Day semi-sweet chocolate chips, eggs, sugar, (corn syrup or extra sugar), butter (from pantry).</p>
+
+  <p><strong>Ingredients</strong></p>
+  <ul class="ingredients-list">
+    <li>1 pie shell (Wholly whole 9&quot; pie shell)</li>
+    <li>1–1.5 cups pecan halves</li>
+    <li>1/2–1 cup chocolate chips</li>
+    <li>3 large eggs</li>
+    <li>1 cup light corn syrup <em>or</em> 3/4 cup sugar + 1/4 cup water</li>
+    <li>4 tbsp melted butter</li>
+    <li>1 tsp vanilla extract (optional but nice)</li>
+    <li>Pinch of salt</li>
+  </ul>
+
+  <p><strong>Steps</strong></p>
+  <ol class="steps-list">
+    <li>Preheat oven to 350°F (177°C).</li>
+    <li>Place the pie shell on a baking sheet.</li>
+    <li>Spread chocolate chips evenly over the bottom of the crust.</li>
+    <li>Arrange pecan halves on top (you can reserve some to place decoratively on top later).</li>
+    <li>In a bowl, whisk eggs until smooth.</li>
+    <li>Add corn syrup (or sugar + water mix), melted butter, vanilla (if using), and a pinch of salt. Whisk until fully combined.</li>
+    <li>Pour the mixture gently over the pecans and chocolate in the crust.</li>
+    <li>If desired, place a few pecan halves neatly on top for decoration.</li>
+    <li>Bake 45–55 minutes, until the filling is set around the edges and the center has just a slight jiggle.</li>
+    <li>If the crust browns too quickly, cover the edges with foil.</li>
+    <li>Cool completely before slicing so the filling can firm up.</li>
+  </ol>
+</div>
+
+</body>
+</html>

@@ -82,10 +82,48 @@
       margin-left: 4px;
       color: #5c3a00;
     }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f3e1c7;
+      margin-right: 4px;
+      margin-top: 2px;
+      color: #5c3a00;
+    }
+    .meta {
+      margin: 4px 0 6px 0;
+    }
     .note {
       font-size: 12px;
       color: #555;
       margin-top: 4px;
+    }
+    .network-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      background: #ffffff;
+      font-size: 12px;
+    }
+    .network-table th,
+    .network-table td {
+      border: 1px solid #ddd;
+      padding: 4px 6px;
+      text-align: left;
+    }
+    .network-table th {
+      background: #f3e1c7;
+    }
+    .critical {
+      background: #ffe4d5;
+      font-weight: bold;
+    }
+    .network-note {
+      font-size: 12px;
+      margin-top: 6px;
+      color: #444;
     }
   </style>
 </head>
@@ -102,6 +140,7 @@
     <li><a href="#main-dinner">Main Thanksgiving Dinner</a></li>
     <li><a href="#pumpkin-pie">Pumpkin Pie</a></li>
     <li><a href="#pecan-chocolate-pie">Pecan Chocolate Pie</a></li>
+    <li><a href="#schedule">Cooking Day Schedule &amp; Network</a></li>
   </ul>
   <div class="note">
     Pantry staples assumed: salt, pepper, oil/butter, basic spices, flour, sugar.
@@ -112,7 +151,14 @@
 <h2 id="main-dinner">Main Thanksgiving Dinner</h2>
 
 <div class="recipe" id="roast-turkey">
-  <h3>Roast Turkey with Herbs<span class="tag">Uses: turkey, herbs, onions, butter, citrus</span></h3>
+  <h3>Roast Turkey with Herbs
+    <span class="tag">Uses: turkey, herbs, onions, butter, citrus</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~30 min</span>
+    <span class="badge">Cook: ~3 hr</span>
+    <span class="badge">Rest: ~30 min</span>
+  </div>
   <p><strong>From your list:</strong> Ferndale frozen turkey, organic mixed herbs, red onions, lemons, navel orange, butter (on hand), broth.</p>
 
   <p><strong>Ingredients</strong></p>
@@ -161,7 +207,7 @@
     <li><strong>Roast</strong>:
       <ul>
         <li>Roast at 325°F, basting with pan juices every 45–60 minutes.</li>
-        <li>Approx time: 13–15 minutes per lb, so around 2.5–3.5 hours for your bird.</li>
+        <li>Approx time: about 3 hours for your bird.</li>
       </ul>
     </li>
     <li><strong>Check doneness</strong>:
@@ -179,7 +225,13 @@
 </div>
 
 <div class="recipe" id="mashed-potatoes">
-  <h3>Creamy Mashed Potatoes<span class="tag">Uses: russet potatoes, milk, butter</span></h3>
+  <h3>Creamy Mashed Potatoes
+    <span class="tag">Uses: russet potatoes, milk, butter</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~15 min</span>
+    <span class="badge">Cook: ~30 min</span>
+  </div>
   <p><strong>From your list:</strong> russet potatoes, Rosenberger whole milk, butter.</p>
 
   <p><strong>Ingredients</strong></p>
@@ -203,7 +255,13 @@
 </div>
 
 <div class="recipe" id="sweet-potatoes">
-  <h3>Roasted Sweet Potatoes<span class="tag">Uses: organic sweet potatoes/yams</span></h3>
+  <h3>Roasted Sweet Potatoes
+    <span class="tag">Uses: organic sweet potatoes/yams</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~10 min</span>
+    <span class="badge">Cook: ~30–40 min</span>
+  </div>
   <p><strong>From your list:</strong> organic sweet potatoes/yams.</p>
 
   <p><strong>Ingredients</strong></p>
@@ -226,7 +284,13 @@
 </div>
 
 <div class="recipe" id="green-bean-casserole">
-  <h3>Green Bean Casserole<span class="tag">Uses: green beans, creamy soup, crispy onions</span></h3>
+  <h3>Green Bean Casserole
+    <span class="tag">Uses: green beans, creamy soup, crispy onions</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~20 min</span>
+    <span class="badge">Bake: ~35 min</span>
+  </div>
   <p><strong>From your list:</strong> local green beans, Pacific cream of mushroom soup, Food Club crispy onions, milk, optional corn/peas.</p>
 
   <p><strong>Ingredients</strong></p>
@@ -251,7 +315,13 @@
 </div>
 
 <div class="recipe" id="cranberry-sauce">
-  <h3>Fresh Cranberry Sauce<span class="tag">Uses: cranberries, sugar, orange</span></h3>
+  <h3>Fresh Cranberry Sauce
+    <span class="tag">Uses: cranberries, sugar, orange</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~5 min</span>
+    <span class="badge">Cook: ~15 min</span>
+  </div>
   <p><strong>From your list:</strong> fresh cranberries, navel orange, sugar (pantry).</p>
 
   <p><strong>Ingredients</strong></p>
@@ -275,7 +345,13 @@
 </div>
 
 <div class="recipe" id="stuffing">
-  <h3>Simple Herb Stuffing<span class="tag">Uses: stuffing mix, onions, herbs, broth</span></h3>
+  <h3>Simple Herb Stuffing
+    <span class="tag">Uses: stuffing mix, onions, herbs, broth</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~20 min</span>
+    <span class="badge">Bake: ~40 min</span>
+  </div>
   <p><strong>From your list:</strong> Arnold stuffing mix, red onions, mixed herbs, Field Day broth, butter.</p>
 
   <p><strong>Ingredients</strong></p>
@@ -300,7 +376,13 @@
 </div>
 
 <div class="recipe" id="cornbread">
-  <h3>Gluten-Free Cornbread<span class="tag">Uses: Bob’s GF cornbread mix</span></h3>
+  <h3>Gluten-Free Cornbread
+    <span class="tag">Uses: Bob’s GF cornbread mix</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~10 min</span>
+    <span class="badge">Bake: ~20–25 min</span>
+  </div>
   <p><strong>From your list:</strong> Bob’s Red Mill gluten-free cornbread mix, eggs, milk, butter.</p>
 
   <p><strong>Steps (follow the box + this simplification)</strong></p>
@@ -315,7 +397,13 @@
 </div>
 
 <div class="recipe" id="carrots">
-  <h3>Glazed Baby Carrots<span class="tag">Uses: rainbow baby carrots</span></h3>
+  <h3>Glazed Baby Carrots
+    <span class="tag">Uses: rainbow baby carrots</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~5 min</span>
+    <span class="badge">Cook: ~10–15 min</span>
+  </div>
   <p><strong>From your list:</strong> organic rainbow baby carrots.</p>
 
   <p><strong>Ingredients</strong></p>
@@ -336,7 +424,13 @@
 </div>
 
 <div class="recipe" id="cider">
-  <h3>Warm Apple “Cider” Drink<span class="tag">Uses: apple juice</span></h3>
+  <h3>Warm Apple “Cider” Drink
+    <span class="tag">Uses: apple juice</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~5 min</span>
+    <span class="badge">Heat: ~15–20 min</span>
+  </div>
   <p><strong>From your list:</strong> Field Day organic apple juice.</p>
 
   <p><strong>Ingredients</strong></p>
@@ -358,7 +452,14 @@
 <h2 id="pumpkin-pie">Pumpkin Pie</h2>
 
 <div class="recipe">
-  <h3>Pumpkin Pie (using Farmers organic pumpkin)<span class="tag">Uses: pumpkin can, pie crust, eggs, cream/milk, sugar & spices</span></h3>
+  <h3>Pumpkin Pie (using Farmers organic pumpkin)
+    <span class="tag">Uses: pumpkin can, pie crust, eggs, cream/milk, sugar &amp; spices</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~20 min</span>
+    <span class="badge">Bake: ~50–60 min</span>
+    <span class="badge">Cool: ~2 hr</span>
+  </div>
   <p><strong>From your list:</strong> Farmers organic pumpkin pie can, Midel GF pie crust, eggs, Rosenberger milk or heavy cream, sugar and spices from pantry, whipped cream.</p>
 
   <p><strong>Ingredients</strong></p>
@@ -394,7 +495,14 @@
 <h2 id="pecan-chocolate-pie">Pecan Chocolate Pie</h2>
 
 <div class="recipe">
-  <h3>Pecan Chocolate Pie<span class="tag">Uses: pecan halves, pie shell, chocolate chips, eggs, sugar/syrup</span></h3>
+  <h3>Pecan Chocolate Pie
+    <span class="tag">Uses: pecan halves, pie shell, chocolate chips, eggs, sugar/syrup</span>
+  </h3>
+  <div class="meta">
+    <span class="badge">Prep: ~20 min</span>
+    <span class="badge">Bake: ~50–60 min</span>
+    <span class="badge">Cool: ~2 hr</span>
+  </div>
   <p><strong>From your list:</strong> pecan halves, Wholly 9&quot; pie shell, Field Day semi-sweet chocolate chips, eggs, sugar, (corn syrup or extra sugar), butter (from pantry).</p>
 
   <p><strong>Ingredients</strong></p>
@@ -424,6 +532,297 @@
     <li>Cool completely before slicing so the filling can firm up.</li>
   </ol>
 </div>
+
+<!-- SCHEDULE & NETWORK -->
+<h2 id="schedule">Cooking Day Schedule &amp; Project Network</h2>
+
+<p>
+  The table below treats your Thanksgiving prep as a small
+  <strong>project network</strong> with activities, durations, and
+  dependencies. We assume cooking starts around <strong>10:30 AM</strong>
+  and the last activity, <strong>“Thanksgiving Dinner Meal”</strong>,
+  finishes at <strong>3:00 PM</strong>.
+</p>
+
+<p><strong>Key activities modeled</strong> (most important steps):</p>
+<ul class="ingredients-list">
+  <li>Turkey prep, roasting, and resting</li>
+  <li>Stuffing prep &amp; bake</li>
+  <li>Mashed potatoes</li>
+  <li>Green bean casserole</li>
+  <li>Cranberry sauce</li>
+  <li>Roasted sweet potatoes</li>
+  <li>Pumpkin pie (bake + cool)</li>
+  <li>Pecan chocolate pie (bake + cool)</li>
+  <li>Cornbread, glazed carrots, warm cider</li>
+  <li>Final serving: “Thanksgiving Dinner Meal”</li>
+</ul>
+
+<table class="network-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Activity</th>
+      <th>Duration<br/>(min)</th>
+      <th>Predecessors</th>
+      <th>ES</th>
+      <th>EF</th>
+      <th>LS</th>
+      <th>LF</th>
+      <th>Float<br/>(min)</th>
+      <th>Critical?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="critical">
+      <td>T1</td>
+      <td>Prep turkey</td>
+      <td>30</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>11:00 AM</td>
+      <td>10:30 AM</td>
+      <td>11:00 AM</td>
+      <td>0</td>
+      <td>Yes</td>
+    </tr>
+    <tr class="critical">
+      <td>T2</td>
+      <td>Roast turkey</td>
+      <td>180</td>
+      <td>T1</td>
+      <td>11:00 AM</td>
+      <td>2:00 PM</td>
+      <td>11:00 AM</td>
+      <td>2:00 PM</td>
+      <td>0</td>
+      <td>Yes</td>
+    </tr>
+    <tr class="critical">
+      <td>T3</td>
+      <td>Rest &amp; carve turkey</td>
+      <td>30</td>
+      <td>T2</td>
+      <td>2:00 PM</td>
+      <td>2:30 PM</td>
+      <td>2:00 PM</td>
+      <td>2:30 PM</td>
+      <td>0</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td>S1</td>
+      <td>Prep stuffing</td>
+      <td>20</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>10:50 AM</td>
+      <td>1:30 PM</td>
+      <td>1:50 PM</td>
+      <td>180</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>S2</td>
+      <td>Bake stuffing</td>
+      <td>40</td>
+      <td>S1</td>
+      <td>10:50 AM</td>
+      <td>11:30 AM</td>
+      <td>1:50 PM</td>
+      <td>2:30 PM</td>
+      <td>180</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>M1</td>
+      <td>Prep potatoes</td>
+      <td>15</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>10:45 AM</td>
+      <td>1:45 PM</td>
+      <td>2:00 PM</td>
+      <td>195</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>M2</td>
+      <td>Cook &amp; mash potatoes</td>
+      <td>30</td>
+      <td>M1</td>
+      <td>10:45 AM</td>
+      <td>11:15 AM</td>
+      <td>2:00 PM</td>
+      <td>2:30 PM</td>
+      <td>195</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>G1</td>
+      <td>Prep green bean casserole</td>
+      <td>20</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>10:50 AM</td>
+      <td>1:35 PM</td>
+      <td>1:55 PM</td>
+      <td>185</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>G2</td>
+      <td>Bake green bean casserole</td>
+      <td>35</td>
+      <td>G1</td>
+      <td>10:50 AM</td>
+      <td>11:25 AM</td>
+      <td>1:55 PM</td>
+      <td>2:30 PM</td>
+      <td>185</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>C1</td>
+      <td>Cook cranberry sauce</td>
+      <td>20</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>10:50 AM</td>
+      <td>2:10 PM</td>
+      <td>2:30 PM</td>
+      <td>220</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>Y1</td>
+      <td>Roast sweet potatoes</td>
+      <td>40</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>11:10 AM</td>
+      <td>1:50 PM</td>
+      <td>2:30 PM</td>
+      <td>200</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>D1</td>
+      <td>Bake pumpkin pie</td>
+      <td>60</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>11:30 AM</td>
+      <td>11:30 AM</td>
+      <td>12:30 PM</td>
+      <td>60</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>D2</td>
+      <td>Cool pumpkin pie</td>
+      <td>120</td>
+      <td>D1</td>
+      <td>11:30 AM</td>
+      <td>1:30 PM</td>
+      <td>12:30 PM</td>
+      <td>2:30 PM</td>
+      <td>60</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>P1</td>
+      <td>Bake pecan pie</td>
+      <td>60</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>11:30 AM</td>
+      <td>11:30 AM</td>
+      <td>12:30 PM</td>
+      <td>60</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>P2</td>
+      <td>Cool pecan pie</td>
+      <td>120</td>
+      <td>P1</td>
+      <td>11:30 AM</td>
+      <td>1:30 PM</td>
+      <td>12:30 PM</td>
+      <td>2:30 PM</td>
+      <td>60</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>B1</td>
+      <td>Bake cornbread</td>
+      <td>30</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>11:00 AM</td>
+      <td>2:00 PM</td>
+      <td>2:30 PM</td>
+      <td>210</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>K1</td>
+      <td>Glazed carrots</td>
+      <td>20</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>10:50 AM</td>
+      <td>2:10 PM</td>
+      <td>2:30 PM</td>
+      <td>220</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>J1</td>
+      <td>Warm cider</td>
+      <td>20</td>
+      <td>—</td>
+      <td>10:30 AM</td>
+      <td>10:50 AM</td>
+      <td>2:10 PM</td>
+      <td>2:30 PM</td>
+      <td>220</td>
+      <td>No</td>
+    </tr>
+
+    <tr class="critical">
+      <td>H</td>
+      <td>Thanksgiving Dinner Meal (serve &amp; sit)</td>
+      <td>30</td>
+      <td>T3, S2, M2, G2, C1, Y1, D2, P2, B1, K1, J1</td>
+      <td>2:30 PM</td>
+      <td>3:00 PM</td>
+      <td>2:30 PM</td>
+      <td>3:00 PM</td>
+      <td>0</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="network-note">
+  The <strong>critical path</strong> is highlighted (T1 → T2 → T3 → H),
+  driven by turkey prep, roasting, resting, and the final meal start.
+  All other activities have float, meaning you can start them later or
+  shift them around in the day as long as they finish by their Late Finish
+  and do not delay the 3:00 PM meal.
+</p>
 
 </body>
 </html>

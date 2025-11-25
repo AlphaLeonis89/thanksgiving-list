@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thanksgiving Shopping List & Receipt Match</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 10px; background-color: #faf5f0; }
+    h1 { text-align: center; margin-bottom: 0; }
+    h2 { margin-top: 24px; margin-bottom: 4px; }
+    h3 { margin-top: 12px; margin-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; background-color: #ffffff; }
+    th, td { padding: 6px 8px; border: 1px solid #ddd; text-align: left; font-size: 13px; }
+    th { background-color: #f3e1c7; }
+    .category-header { background-color: #f9efdf; font-weight: bold; }
+    .totals { margin-top: 8px; font-size: 14px; font-weight: bold; text-align: right; }
+    .overall-total { margin-top: 16px; font-size: 16px; font-weight: bold; text-align: right; }
+    .note { font-size: 11px; margin-top: 8px; color: #555; }
+    .summary-box { margin-top: 12px; padding: 8px; background:#fff7e6; border-radius:6px; border:1px solid #f0d29a; }
+    .section-header { display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; }
+
+    button.check-all {
+      padding: 4px 10px;
+      font-size: 12px;
+      border-radius: 4px;
+      border: 1px solid #c58b3b;
+      background: #f8d9a5;
+    }
+
+    .chart-wrapper { max-width: 600px; margin: 12px auto; }
+    .chart-bar {
+      height: 26px;
+      margin: 6px 0;
+      background: #f2c390;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+    .chart-bar-inner {
+      height: 100%;
+      background: #d27c2c;
+      width: 0;
+      transition: width 0.6s ease-out;
+    }
+    .chart-label {
+      position: absolute;
+      left: 8px;
+      top: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #222;
+    }
+    .chart-value {
+      position: absolute;
+      right: 8px;
+      top: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Thanksgiving Shopping Checklist</h1>
+  <h3 style="text-align:center;">Pork-free • Family of 4 • Tap to check off items</h3>
+
+  <div class="summary-box">
+    <strong>Matched items summary (shopping list vs receipt)</strong><br/>
+    Estimated cost of matched items: <span id="matched-est">$0.00</span><br/>
+    Actual cost from receipt: <span id="matched-rec">$0.00</span><br/>
+    Difference: <span id="matched-diff">$0.00</span>
+  </div>
+
+  <!-- MAIN THANKSGIVING DINNER -->
+  <div class="section-header">
+    <h2>Main Thanksgiving Dinner</h2>
+    <button type="button" class="check-all" data-meal="main">Check / uncheck all (main)</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Done</th>
+        <th>Item</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Est. Price</th>
+        <th>Receipt Price</th>
+        <th>Diff (receipt − est)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="category-header"><td colspan="7">Turkey &amp; Proteins</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="20" checked></td>
+        <td>Turkey (Ferndale frozen, 12.62 lb @ $2.69/lb)</td>
+        <td>Main Dish</td>
+        <td>1 whole</td>
+        <td>$20.00</td>
+        <td>$33.95</td>
+        <td data-diff-row data-est="20" data-receipt="33.95"></td>
+      </tr>
+
+      <tr class="category-header"><td colspan="7">Produce &amp; Veg Sides</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="4" checked></td>
+        <td>Russet potatoes</td>
+        <td>Produce</td>
+        <td>4.28 lb</td>
+        <td>$4.00</td>
+        <td>$4.24</td>
+        <td data-diff-row data-est="4" data-receipt="4.24"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="4" checked></td>
+        <td>Organic sweet potatoes/yams</td>
+        <td>Produce</td>
+        <td>1.85 lb</td>
+        <td>$4.00</td>
+        <td>$5.53</td>
+        <td data-diff-row data-est="4" data-receipt="5.53"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="3" checked></td>
+        <td>Cranberries 12 oz (fresh)</td>
+        <td>Produce</td>
+        <td>1 bag</td>
+        <td>$3.00</td>
+        <td>$2.99</td>
+        <td data-diff-row data-est="3" data-receipt="2.99"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="4" checked></td>
+        <td>Local green beans</td>
+        <td>Produce</td>
+        <td>1.39 lb</td>
+        <td>$4.00</td>
+        <td>$2.77</td>
+        <td data-diff-row data-est="4" data-receipt="2.77"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="1.75" checked></td>
+        <td>Lemons &amp; navel oranges</td>
+        <td>Produce</td>
+        <td>2 lemons + 1 orange</td>
+        <td>$1.75</td>
+        <td>$2.87</td>
+        <td data-diff-row data-est="1.75" data-receipt="2.87"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="3" checked></td>
+        <td>Organic mixed herbs</td>
+        <td>Produce</td>
+        <td>3 oz pack</td>
+        <td>$3.00</td>
+        <td>$3.99</td>
+        <td data-diff-row data-est="3" data-receipt="3.99"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="1.5" checked></td>
+        <td>Local red onions</td>
+        <td>Produce</td>
+        <td>1.24 lb</td>
+        <td>$1.50</td>
+        <td>$2.47</td>
+        <td data-diff-row data-est="1.5" data-receipt="2.47"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="1.5"></td>
+        <td>Organic rainbow baby carrots</td>
+        <td>Produce</td>
+        <td>12 oz</td>
+        <td>$1.50</td>
+        <td>$3.49</td>
+        <td data-diff-row data-est="1.5" data-receipt="3.49"></td>
+      </tr>
+
+      <tr class="category-header"><td colspan="7">Canned &amp; Boxed</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="5"></td>
+        <td>Stuffing mix (Arnold herb &amp; ssng, 2 boxes)</td>
+        <td>Side</td>
+        <td>2 x 14 oz</td>
+        <td>$5.00</td>
+        <td>$7.98</td>
+        <td data-diff-row data-est="5" data-receipt="7.98"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="5" checked></td>
+        <td>Field Day broth LS chicken</td>
+        <td>Pantry</td>
+        <td>32 oz</td>
+        <td>$5.00</td>
+        <td>$1.67</td>
+        <td data-diff-row data-est="5" data-receipt="1.67"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="1.5" checked></td>
+        <td>Pacific org cream of mushroom soup</td>
+        <td>Pantry</td>
+        <td>10.5 oz</td>
+        <td>$1.50</td>
+        <td>$2.50</td>
+        <td data-diff-row data-est="1.5" data-receipt="2.50"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="3.5" checked></td>
+        <td>Food Club crispy onions</td>
+        <td>Pantry</td>
+        <td>2.8 oz</td>
+        <td>$3.50</td>
+        <td>$2.99</td>
+        <td data-diff-row data-est="3.5" data-receipt="2.99"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="2" checked></td>
+        <td>Field org corn 15 oz</td>
+        <td>Side</td>
+        <td>1 can</td>
+        <td>$2.00</td>
+        <td>$1.50</td>
+        <td data-diff-row data-est="2" data-receipt="1.50"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="2"></td>
+        <td>Field org green sweet peas</td>
+        <td>Side</td>
+        <td>2 cans</td>
+        <td>$2.00</td>
+        <td>$3.00</td>
+        <td data-diff-row data-est="2" data-receipt="3.00"></td>
+      </tr>
+
+      <tr class="category-header"><td colspan="7">Dairy</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="7"></td>
+        <td>Butter (not purchased on this trip)</td>
+        <td>Dairy</td>
+        <td>2 lb</td>
+        <td>$7.00</td>
+        <td>—</td>
+        <td data-diff-row></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="3" checked></td>
+        <td>Rosenberger whole milk 1/2 gal (x2)</td>
+        <td>Dairy</td>
+        <td>2</td>
+        <td>$3.00</td>
+        <td>$5.98</td>
+        <td data-diff-row data-est="3" data-receipt="5.98"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="4" checked></td>
+        <td>Rosenberg heavy cream 32 oz</td>
+        <td>Dairy</td>
+        <td>1</td>
+        <td>$4.00</td>
+        <td>$7.49</td>
+        <td data-diff-row data-est="4" data-receipt="7.49"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="3" checked></td>
+        <td>Farmers cage free large brown eggs (12)</td>
+        <td>Dairy</td>
+        <td>1 dozen</td>
+        <td>$3.00</td>
+        <td>$3.99</td>
+        <td data-diff-row data-est="3" data-receipt="3.99"></td>
+      </tr>
+
+      <tr class="category-header"><td colspan="7">Bread &amp; Sides</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="4" checked></td>
+        <td>Nat Own butter dinner rolls 12 ct</td>
+        <td>Bread</td>
+        <td>1 pack</td>
+        <td>$4.00</td>
+        <td>$3.99</td>
+        <td data-diff-row data-est="4" data-receipt="3.99"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="4" checked></td>
+        <td>Bob's GF cornbread mix 20 oz</td>
+        <td>Bread</td>
+        <td>1 box</td>
+        <td>$4.00</td>
+        <td>$4.99</td>
+        <td data-diff-row data-est="4" data-receipt="4.99"></td>
+      </tr>
+
+      <tr class="category-header"><td colspan="7">Drinks</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="5" checked></td>
+        <td>Field org apple juice 64 oz (used as cider)</td>
+        <td>Drinks</td>
+        <td>1 bottle</td>
+        <td>$5.00</td>
+        <td>$5.99</td>
+        <td data-diff-row data-est="5" data-receipt="5.99"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="main" data-price="1" checked></td>
+        <td>Coffee/tea (hot bar)</td>
+        <td>Drinks</td>
+        <td>1</td>
+        <td>$1.00</td>
+        <<td>$1.00</td>
+        <td data-diff-row data-est="1" data-receipt="1.00"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="totals">Main dinner total (checked estimate): $<span id="total-main">0.00</span></div>
+
+  <!-- PUMPKIN PIE -->
+  <div class="section-header">
+    <h2>Pumpkin Pie (from scratch)</h2>
+    <button type="button" class="check-all" data-meal="pumpkin">Check / uncheck all (pumpkin)</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Done</th>
+        <th>Ingredient</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Est. Price</th>
+        <th>Receipt Price</th>
+        <th>Diff (receipt − est)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="category-header"><td colspan="7">Pie crust</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pumpkin" data-price="3" checked></td>
+        <td>Midel GF pie crust graham</td>
+        <td>Refrigerated</td>
+        <td>1 (9 inch)</td>
+        <td>$3.00</td>
+        <td>$3.79</td>
+        <td data-diff-row data-est="3" data-receipt="3.79"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pumpkin" data-price="5.49" checked></td>
+        <td>Ntrl by Ntr whipped cream 7 oz</td>
+        <td>Dairy</td>
+        <td>1 can</td>
+        <td>$3.00</td>
+        <td>$5.49</td>
+        <td data-diff-row data-est="3" data-receipt="5.49"></td>
+      </tr>
+
+      <tr class="category-header"><td colspan="7">Pumpkin filling</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pumpkin" data-price="3" checked></td>
+        <td>Farmers organic pumpkin pie 15 oz (can)</td>
+        <td>Pantry</td>
+        <td>1 can</td>
+        <td>$3.00</td>
+        <td>$3.29</td>
+        <td data-diff-row data-est="3" data-receipt="3.29"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pumpkin" data-price="3" checked></td>
+        <td>Eggs (from dozen)</td>
+        <td>Dairy</td>
+        <td>3 large</td>
+        <td>$3.00</td>
+        <td>$3.99 (shared)</td>
+        <td data-diff-row data-est="3" data-receipt="3.99"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pumpkin" data-price="2"></td>
+        <td>Sugar &amp; spices (on hand)</td>
+        <td>Pantry</td>
+        <td>—</td>
+        <td>$2.00</td>
+        <td>—</td>
+        <td data-diff-row></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="totals">Pumpkin pie total (checked estimate): $<span id="total-pumpkin">0.00</span></div>
+
+  <!-- PECAN CHOCOLATE PIE -->
+  <div class="section-header">
+    <h2>Pecan Chocolate Pie</h2>
+    <button type="button" class="check-all" data-meal="pecan">Check / uncheck all (pecan)</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Done</th>
+        <th>Ingredient</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Est. Price</th>
+        <th>Receipt Price</th>
+        <th>Diff (receipt − est)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="category-header"><td colspan="7">Nuts &amp; crust</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pecan" data-price="6" checked></td>
+        <td>Pecan halves</td>
+        <td>Pantry</td>
+        <td>0.90 lb</td>
+        <td>$6.00</td>
+        <td>$13.49</td>
+        <td data-diff-row data-est="6" data-receipt="13.49"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pecan" data-price="5.49" checked></td>
+        <td>Wholly whole 9&quot; pie shell</td>
+        <td>Frozen</td>
+        <td>1 crust</td>
+        <td>$3.00</td>
+        <td>$5.49</td>
+        <td data-diff-row data-est="3" data-receipt="5.49"></td>
+      </tr>
+
+      <tr class="category-header"><td colspan="7">Other filling ingredients</td></tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pecan" data-price="3.5"></td>
+        <td>Chocolate chips (Field Day semi-sweet, 2 bags)</td>
+        <td>Pantry</td>
+        <td>2 x 10 oz</td>
+        <td>$3.50</td>
+        <td>$9.98</td>
+        <td data-diff-row data-est="3.5" data-receipt="9.98"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="item-checkbox" data-meal="pecan" data-price="3"></td>
+        <td>Corn syrup (not on this receipt)</td>
+        <td>Pantry</td>
+        <td>1 bottle</td>
+        <td>$3.00</td>
+        <td>—</td>
+        <td data-diff-row></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="totals">Pecan chocolate pie total (checked estimate): $<span id="total-pecan">0.00</span></div>
+
+  <div class="overall-total">
+    Overall estimate for all checked items: $<span id="total-overall">0.00</span>
+  </div>
+
+  <!-- RECEIPT SUMMARY -->
+  <h2>Receipt Summary (Weavers Way Co-op)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Line</th>
+        <th>Receipt Amount</th>
+        <th>Adjusted Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sale Subtotal</td>
+        <td>$193.64</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Working Member Discount</td>
+        <td>−$3.32</td>
+        <td>−$3.32</td>
+      </tr>
+      <tr>
+        <td>Food For All Discount</td>
+        <td>−$13.14</td>
+        <td>−$13.14</td>
+      </tr>
+      <tr>
+        <td>Tax</td>
+        <td>$0.06</td>
+        <td>$0.06</td>
+      </tr>
+      <tr>
+        <td><strong>Total paid</strong></td>
+        <td><strong>$177.24</strong></td>
+        <td><strong>$177.24</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="chart-wrapper">
+    <h3>Receipt Totals Chart</h3>
+    <div class="chart-bar" data-value="193.64" data-label="Subtotal">
+      <div class="chart-bar-inner"></div>
+      <span class="chart-label">Subtotal</span>
+      <span class="chart-value">$193.64</span>
+    </div>
+    <div class="chart-bar" data-value="177.24" data-label="Total paid">
+      <div class="chart-bar-inner"></div>
+      <span class="chart-label">Total after discounts &amp; tax</span>
+      <span class="chart-value">$177.24</span>
+    </div>
+  </div>
+
+  <p class="note">
+    Green numbers in the diff column mean you spent less than estimated; red numbers mean you spent more.
+    Use the “check / uncheck all” buttons per section to quickly toggle what’s included in your estimate totals.
+  </p>
+
+  <script>
+    function updateTotals() {
+      const checkboxes = document.querySelectorAll('.item-checkbox');
+      let totalMain = 0, totalPumpkin = 0, totalPecan = 0, totalOverall = 0;
+
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          const price = parseFloat(cb.getAttribute('data-price')) || 0;
+          const meal = cb.getAttribute('data-meal');
+          totalOverall += price;
+          if (meal === 'main') totalMain += price;
+          if (meal === 'pumpkin') totalPumpkin += price;
+          if (meal === 'pecan') totalPecan += price;
+        }
+      });
+
+      document.getElementById('total-main').textContent = totalMain.toFixed(2);
+      document.getElementById('total-pumpkin').textContent = totalPumpkin.toFixed(2);
+      document.getElementById('total-pecan').textContent = totalPecan.toFixed(2);
+      document.getElementById('total-overall').textContent = totalOverall.toFixed(2);
+    }
+
+    function updateDiffs() {
+      let totalEst = 0;
+      let totalRec = 0;
+      document.querySelectorAll('td[data-diff-row]').forEach(cell => {
+        const est = parseFloat(cell.getAttribute('data-est'));
+        const rec = parseFloat(cell.getAttribute('data-receipt'));
+        if (!isNaN(est) && !isNaN(rec)) {
+          const diff = rec - est;
+          totalEst += est;
+          totalRec += rec;
+          const sign = diff > 0 ? '+' : '';
+          cell.textContent = sign + '$' + diff.toFixed(2);
+          if (diff < 0) {
+            cell.style.color = '#1b5e20';   // under estimate
+          } else if (diff > 0) {
+            cell.style.color = '#b00020';   // over estimate
+          }
+        } else {
+          if (!cell.textContent) cell.textContent = '—';
+        }
+      });
+      document.getElementById('matched-est').textContent = '$' + totalEst.toFixed(2);
+      document.getElementById('matched-rec').textContent = '$' + totalRec.toFixed(2);
+      const savings = totalEst - totalRec;
+      const diffEl = document.getElementById('matched-diff');
+      if (savings > 0) {
+        diffEl.textContent = '$' + savings.toFixed(2) + ' under estimate';
+      } else if (savings < 0) {
+        diffEl.textContent = '$' + Math.abs(savings).toFixed(2) + ' over estimate';
+      } else {
+        diffEl.textContent = '$0.00 (exact match)';
+      }
+    }
+
+    function initChart() {
+      const bars = document.querySelectorAll('.chart-bar');
+      let maxVal = 0;
+      bars.forEach(b => {
+        const v = parseFloat(b.getAttribute('data-value')) || 0;
+        if (v > maxVal) maxVal = v;
+      });
+      bars.forEach(b => {
+        const v = parseFloat(b.getAttribute('data-value')) || 0;
+        const inner = b.querySelector('.chart-bar-inner');
+        const widthPercent = maxVal > 0 ? (v / maxVal) * 100 : 0;
+        inner.style.width = widthPercent + '%';
+      });
+    }
+
+    // check-all buttons
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('check-all')) {
+        const meal = e.target.getAttribute('data-meal');
+        const boxes = document.querySelectorAll('.item-checkbox[data-meal="' + meal + '"]');
+        let anyUnchecked = false;
+        boxes.forEach(cb => { if (!cb.checked) anyUnchecked = true; });
+        boxes.forEach(cb => { cb.checked = anyUnchecked; });
+        updateTotals();
+      }
+    });
+
+    document.querySelectorAll('.item-checkbox').forEach(cb => {
+      cb.addEventListener('change', updateTotals);
+    });
+
+    updateTotals();
+    updateDiffs();
+    initChart();
+  </script>
+
+</body>
+</html>

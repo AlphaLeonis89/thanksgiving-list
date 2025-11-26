@@ -5,46 +5,6 @@
   <title>Thanksgiving Recipes – Step by Step</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-        .network-diagram {
-      margin-top: 12px;
-      padding: 8px;
-      background: #ffffff;
-      border-radius: 8px;
-      border: 1px solid #ead1a5;
-    }
-    .network-diagram-title {
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-    .network-diagram svg {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    .net-node {
-      fill: #e4f0ff;
-      stroke: #666;
-      stroke-width: 1.2;
-      rx: 6;
-      ry: 6;
-    }
-    .net-node-critical {
-      fill: #ffd6c9;
-      stroke: #c44;
-      stroke-width: 1.4;
-      rx: 6;
-      ry: 6;
-    }
-    .net-text {
-      font-size: 11px;
-      fill: #222;
-    }
-    .net-line {
-      stroke: #555;
-      stroke-width: 1.5;
-    }
-
     body {
       font-family: Arial, sans-serif;
       margin: 10px;
@@ -165,6 +125,64 @@
       margin-top: 6px;
       color: #444;
     }
+
+    /* Network diagram styles */
+    .network-diagram {
+      margin-top: 12px;
+      padding: 8px;
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #ead1a5;
+    }
+    .network-diagram-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .network-diagram svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .net-node,
+    .net-node-critical {
+      cursor: pointer;
+      transition: fill 0.2s, stroke-width 0.2s;
+    }
+    .net-node {
+      fill: #e4f0ff;
+      stroke: #666;
+      stroke-width: 1.2;
+      rx: 6;
+      ry: 6;
+    }
+    .net-node-critical {
+      fill: #ffd6c9;
+      stroke: #c44;
+      stroke-width: 1.4;
+      rx: 6;
+      ry: 6;
+    }
+    .net-node-selected {
+      stroke-width: 2.3;
+      stroke: #1b4f72;
+    }
+    .net-text {
+      font-size: 11px;
+      fill: #222;
+    }
+    .net-line {
+      stroke: #555;
+      stroke-width: 1.5;
+    }
+    .network-diagram-info {
+      margin-top: 6px;
+      padding: 6px 8px;
+      font-size: 12px;
+      background: #fff7e6;
+      border-radius: 6px;
+      border: 1px solid #f0d29a;
+    }
   </style>
 </head>
 <body>
@@ -177,6 +195,7 @@
 <div class="toc">
   <strong>Quick navigation</strong>
   <ul>
+    <li><a href="#day-before">Day-Before Prep Plan</a></li>
     <li><a href="#main-dinner">Main Thanksgiving Dinner</a></li>
     <li><a href="#pumpkin-pie">Pumpkin Pie</a></li>
     <li><a href="#pecan-chocolate-pie">Pecan Chocolate Pie</a></li>
@@ -185,6 +204,70 @@
   <div class="note">
     Pantry staples assumed: salt, pepper, oil/butter, basic spices, flour, sugar.
   </div>
+</div>
+
+<!-- DAY-BEFORE PREP -->
+<h2 id="day-before">Day-Before Prep Plan</h2>
+
+<div class="recipe">
+  <h3>What to Do the Day Before</h3>
+  <div class="meta">
+    <span class="badge">Goal: reduce day-of stress</span>
+  </div>
+  <p>
+    These steps can all be done the day before Thanksgiving so that the actual cooking day
+    (starting around 10:30 AM and finishing the meal at 3:00 PM) is much smoother.
+  </p>
+
+  <h3>Turkey: Thawing &amp; Optional Brining</h3>
+  <ul class="ingredients-list">
+    <li>Make sure turkey is fully <strong>thawed in the fridge</strong>. For a 12–13 lb bird, allow about 3 days of fridge time.</li>
+    <li>If you like a brined turkey:
+      <ul>
+        <li>Mix a brine: about 1 cup kosher salt + 1/2–1 cup sugar per gallon of water, plus herbs, garlic, peppercorns, citrus slices.</li>
+        <li>Submerge turkey in a large food-safe container or brining bag, keep refrigerated.</li>
+        <li>Brine for up to 12–24 hours, then remove turkey, pat dry, and store uncovered in the fridge to dry the skin overnight (helps crispiness).</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Pies (Pumpkin &amp; Pecan Chocolate)</h3>
+  <ul class="ingredients-list">
+    <li><strong>Fully bake both pies the day before.</strong>
+      <ul>
+        <li>Follow the pumpkin pie and pecan chocolate pie recipes below.</li>
+        <li>Let them cool completely, then cover loosely and refrigerate overnight.</li>
+        <li>On Thanksgiving, bring to room temp before serving, or warm slices briefly if desired.</li>
+      </ul>
+    </li>
+    <li>This frees up oven space and mental bandwidth on the main day.</li>
+  </ul>
+
+  <h3>Cranberry Sauce</h3>
+  <ul class="ingredients-list">
+    <li>Cook the <strong>fresh cranberry sauce</strong> totally the day before.</li>
+    <li>Cool, transfer to a container, and refrigerate. It actually tastes better after resting overnight.</li>
+  </ul>
+
+  <h3>Chopping &amp; Prep Work</h3>
+  <ul class="ingredients-list">
+    <li>Wash and chop <strong>red onions</strong> for stuffing and other dishes; store in airtight containers.</li>
+    <li>Wash and trim <strong>green beans</strong> (you can even blanch them and cool, then store covered in the fridge).</li>
+    <li>Peel and cube <strong>sweet potatoes</strong>, store submerged in cold water in the fridge (to prevent browning), then drain well before roasting.</li>
+    <li>Measure out sugar and spices for pies into small containers or labeled bags.</li>
+  </ul>
+
+  <h3>Tabletop &amp; Misc</h3>
+  <ul class="ingredients-list">
+    <li>Lay out serving dishes, utensils, and labels (e.g., “stuffing”, “green beans”, “gravy”).</li>
+    <li>Chill drinks that need to be cold.</li>
+    <li>If kids are helping, assign simple tasks (stirring, carrying napkins, etc.).</li>
+  </ul>
+
+  <p class="note">
+    Doing these steps the day before means that on Thanksgiving you mostly focus on:
+    roasting the turkey, finishing sides, reheating, and enjoying the meal.
+  </p>
 </div>
 
 <!-- MAIN THANKSGIVING DINNER -->
@@ -607,49 +690,58 @@
       </marker>
     </defs>
 
-    <!-- Critical path: T1 -> T2 -> T3 -> H -->
+    <!-- Critical path: START -> T1 -> T2 -> T3 -> H -->
     <!-- Start / Oven On -->
-    <rect class="net-node-critical" x="20" y="90" width="130" height="50" />
+    <rect class="net-node net-node-critical" data-act="START"
+          x="20" y="90" width="130" height="50" />
     <text class="net-text" x="85" y="108" text-anchor="middle">Start</text>
     <text class="net-text" x="85" y="122" text-anchor="middle">(Oven on /</text>
     <text class="net-text" x="85" y="136" text-anchor="middle">setup)</text>
 
     <!-- T1 Prep turkey -->
-    <rect class="net-node-critical" x="180" y="90" width="150" height="50" />
+    <rect class="net-node net-node-critical" data-act="T1"
+          x="180" y="90" width="150" height="50" />
     <text class="net-text" x="255" y="108" text-anchor="middle">T1: Prep turkey</text>
     <text class="net-text" x="255" y="124" text-anchor="middle">30 min (ES 10:30)</text>
 
     <!-- T2 Roast turkey -->
-    <rect class="net-node-critical" x="360" y="90" width="170" height="50" />
+    <rect class="net-node net-node-critical" data-act="T2"
+          x="360" y="90" width="170" height="50" />
     <text class="net-text" x="445" y="108" text-anchor="middle">T2: Roast turkey</text>
     <text class="net-text" x="445" y="124" text-anchor="middle">180 min (11:00–2:00)</text>
 
     <!-- T3 Rest & carve -->
-    <rect class="net-node-critical" x="570" y="90" width="160" height="50" />
+    <rect class="net-node net-node-critical" data-act="T3"
+          x="570" y="90" width="160" height="50" />
     <text class="net-text" x="650" y="108" text-anchor="middle">T3: Rest &amp; carve</text>
     <text class="net-text" x="650" y="124" text-anchor="middle">30 min (2:00–2:30)</text>
 
     <!-- H Dinner -->
-    <rect class="net-node-critical" x="760" y="90" width="130" height="50" />
+    <rect class="net-node net-node-critical" data-act="H"
+          x="760" y="90" width="130" height="50" />
     <text class="net-text" x="825" y="108" text-anchor="middle">H: Dinner served</text>
     <text class="net-text" x="825" y="124" text-anchor="middle">2:30–3:00 PM</text>
 
     <!-- Non-critical: Pies (D1/D2) on top row -->
-    <rect class="net-node" x="180" y="20" width="150" height="50" />
+    <rect class="net-node" data-act="D1"
+          x="180" y="20" width="150" height="50" />
     <text class="net-text" x="255" y="38" text-anchor="middle">D1: Bake pies</text>
     <text class="net-text" x="255" y="54" text-anchor="middle">~60 min</text>
 
-    <rect class="net-node" x="360" y="20" width="170" height="50" />
+    <rect class="net-node" data-act="D2"
+          x="360" y="20" width="170" height="50" />
     <text class="net-text" x="445" y="38" text-anchor="middle">D2: Pies cool &amp; ready</text>
     <text class="net-text" x="445" y="54" text-anchor="middle">~120 min float</text>
 
-    <!-- Non-critical: Sides (stuffing / potatoes / beans) on bottom row -->
-    <rect class="net-node" x="180" y="160" width="150" height="50" />
-    <text class="net-text" x="255" y="178" text-anchor="middle">Sides prep</text>
+    <!-- Non-critical: Sides (S1/S2) on bottom row -->
+    <rect class="net-node" data-act="S1"
+          x="180" y="160" width="150" height="50" />
+    <text class="net-text" x="255" y="178" text-anchor="middle">S1: Sides prep</text>
     <text class="net-text" x="255" y="194" text-anchor="middle">(stuffing, veg, etc.)</text>
 
-    <rect class="net-node" x="360" y="160" width="170" height="50" />
-    <text class="net-text" x="445" y="178" text-anchor="middle">Sides finish &amp; hold</text>
+    <rect class="net-node" data-act="S2"
+          x="360" y="160" width="170" height="50" />
+    <text class="net-text" x="445" y="178" text-anchor="middle">S2: Sides finish &amp; hold</text>
     <text class="net-text" x="445" y="194" text-anchor="middle">ready by 2:30 PM</text>
 
     <!-- Arrows critical path -->
@@ -673,8 +765,12 @@
     <line class="net-line" x1="530" y1="45" x2="760" y2="90" marker-end="url(#arrow)" />
     <line class="net-line" x1="530" y1="185" x2="760" y2="140" marker-end="url(#arrow)" />
   </svg>
+
+  <div id="net-info" class="network-diagram-info">
+    Tap or click a box to see activity details (duration, start/finish times, float).
+  </div>
 </div>
-  
+
 <table class="network-table">
   <thead>
     <tr>
@@ -940,6 +1036,145 @@
   shift them around in the day as long as they finish by their Late Finish
   and do not delay the 3:00 PM meal.
 </p>
+
+<script>
+  // Activity data for the interactive diagram
+  const netActivities = {
+    START: {
+      name: 'Start / Oven On',
+      duration: '0 min',
+      es: '10:30 AM',
+      ef: '10:30 AM',
+      ls: '10:30 AM',
+      lf: '10:30 AM',
+      float: '0',
+      critical: true
+    },
+    T1: {
+      name: 'Prep turkey',
+      duration: '30 min',
+      es: '10:30 AM',
+      ef: '11:00 AM',
+      ls: '10:30 AM',
+      lf: '11:00 AM',
+      float: '0',
+      critical: true
+    },
+    T2: {
+      name: 'Roast turkey',
+      duration: '180 min',
+      es: '11:00 AM',
+      ef: '2:00 PM',
+      ls: '11:00 AM',
+      lf: '2:00 PM',
+      float: '0',
+      critical: true
+    },
+    T3: {
+      name: 'Rest & carve turkey',
+      duration: '30 min',
+      es: '2:00 PM',
+      ef: '2:30 PM',
+      ls: '2:00 PM',
+      lf: '2:30 PM',
+      float: '0',
+      critical: true
+    },
+    H: {
+      name: 'Thanksgiving Dinner Meal',
+      duration: '30 min',
+      es: '2:30 PM',
+      ef: '3:00 PM',
+      ls: '2:30 PM',
+      lf: '3:00 PM',
+      float: '0',
+      critical: true
+    },
+    D1: {
+      name: 'Bake pies',
+      duration: '60 min',
+      es: '10:30 AM',
+      ef: '11:30 AM',
+      ls: '11:30 AM',
+      lf: '12:30 PM',
+      float: '60',
+      critical: false
+    },
+    D2: {
+      name: 'Pies cool & ready',
+      duration: '120 min',
+      es: '11:30 AM',
+      ef: '1:30 PM',
+      ls: '12:30 PM',
+      lf: '2:30 PM',
+      float: '60',
+      critical: false
+    },
+    S1: {
+      name: 'Sides prep (stuffing / veg)',
+      duration: '20 min',
+      es: '10:30 AM',
+      ef: '10:50 AM',
+      ls: '1:30 PM',
+      lf: '1:50 PM',
+      float: '180',
+      critical: false
+    },
+    S2: {
+      name: 'Sides finish & hold',
+      duration: '35–40 min',
+      es: '10:50 AM',
+      ef: '11:25–11:30 AM',
+      ls: '1:50 PM',
+      lf: '2:30 PM',
+      float: '≈180',
+      critical: false
+    }
+  };
+
+  function initNetworkDiagram() {
+    const infoBox = document.getElementById('net-info');
+    const nodes = document.querySelectorAll('.network-diagram [data-act]');
+
+    function selectNode(el) {
+      nodes.forEach(n => n.classList.remove('net-node-selected'));
+
+      el.classList.add('net-node-selected');
+
+      const id = el.getAttribute('data-act');
+      const data = netActivities[id];
+
+      if (!data) {
+        infoBox.textContent = 'Activity ' + id + ' (no CPM details defined)';
+        return;
+      }
+
+      infoBox.innerHTML =
+        '<strong>' + data.name + ' (' + id + ')</strong><br>' +
+        'Duration: ' + data.duration + '<br>' +
+        'Early Start / Finish: ' + data.es + ' → ' + data.ef + '<br>' +
+        'Late Start / Finish: ' + data.ls + ' → ' + data.lf + '<br>' +
+        'Total Float: ' + data.float + ' min' +
+        (data.critical ? ' <span style="color:#c0392b; font-weight:bold;">(Critical)</span>' : '');
+    }
+
+    nodes.forEach(node => {
+      node.addEventListener('click', () => selectNode(node));
+      node.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectNode(node);
+        }
+      });
+      node.setAttribute('tabindex', '0');
+    });
+
+    const dinner = document.querySelector('.network-diagram [data-act="H"]');
+    if (dinner) selectNode(dinner);
+  }
+
+  document.addEventListener('DOMContentLoaded', initNetworkDiagram);
+</script>
 
 </body>
 </html>
